@@ -8,5 +8,12 @@ stop_words = set(stopwords.words("english"))
 words = word_tokenize(text)
 
 filtered_text = [w for w in words if not w in stop_words]
+# above code is similar to below commented code
+#
+# filtered_text = []
+#
+# for w in words:
+#     if w not in stop_words:
+#         filtered_text.append(w)
 
 print(filtered_text)
