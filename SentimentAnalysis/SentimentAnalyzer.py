@@ -1,4 +1,3 @@
-import random
 import pickle
 from nltk.tokenize import word_tokenize
 
