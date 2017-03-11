@@ -72,3 +72,23 @@ ten multiplied by four
 8 divided by 8
 9 divided by 9
 0 divided by 0
+10 / 1
+20 / 2
+30 / 3
+40 / 4
+50 / 5
+60 / 6
+70 / 7
+80 / 8
+90 / 9
+0 / 10
+1 multiplied by 1
+2 multiplied by 2
+3 multiplied by 3
+4 multiplied by 4
+5 multiplied by 5
+6 multiplied by 6
+7 multiplied by 7
+8 multiplied by 8
+9 multiplied by 9
+0 multiplied by 0
