@@ -11,3 +11,9 @@ turn on the fan
 switch on the LED
 switch off the TV
 turn the machine on
+move forward
+move backward
+move up
+move down
+turn right
+turn left
