@@ -14,14 +14,13 @@ welcome = open("raw/welcome.txt", "r").read()
 command = open("raw/commands.txt", "r").read()
 maths = open("raw/maths.txt", "r").read()
 
-
 print("Building documents and words...")
 
 all_words = []
 documents = []
 
 #  j is adject, r is adverb, and v is verb
-allowed_word_types = ["J","R","V"]
+allowed_word_types = ["J", "R", "V"]
 
 for wel in welcome.split("\n"):
     documents.append((wel, "wel"))
@@ -113,7 +112,8 @@ save_classifier.close()
 
 LogisticRegression_classifier = SklearnClassifier(LogisticRegression())
 LogisticRegression_classifier.train(training_set)
-print("LogisticRegression_classifier Accuracy ->", (nltk.classify.accuracy(LogisticRegression_classifier, testing_set)) * 100)
+print("LogisticRegression_classifier Accuracy ->",
+      (nltk.classify.accuracy(LogisticRegression_classifier, testing_set)) * 100)
 
 save_classifier = open("pickled/LogisticRegression_classifier5k.pickle", "wb")
 pickle.dump(LogisticRegression_classifier, save_classifier)
