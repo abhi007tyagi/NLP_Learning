@@ -17,7 +17,7 @@ def extract_chunks(chunked, tag):
     exp = ""
     for subtree in chunked.subtrees(filter=lambda t: t.label() == tag):
         for l in subtree.leaves():
-            exp += " " + str(l[0])
+            exp += " "+str(l[0])
     return exp
 
 
@@ -89,5 +89,5 @@ def get_math_evaluation(text):
     # print(chunkedData)
 
     expression = check_word_action(get_exp(chunkedData))
-    print(expression + " = ", eval(expression))
+    return str(expression + " = " + str(eval(expression)))
 

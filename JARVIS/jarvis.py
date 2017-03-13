@@ -47,18 +47,6 @@ def find_features(document):
     return features
 
 
-# featuresets_f = open("pickled/featuresets.pickle", "rb")
-# featuresets = pickle.load(featuresets_f)
-# featuresets_f.close()
-
-# featuresets = [(find_features(rev), category) for (rev, category) in documents]
-# random.shuffle(featuresets)
-
-# print(len(featuresets))
-
-# testing_set = featuresets[10000:]
-# training_set = featuresets[:10000]
-
 open_file = open("pickled/originalnaivebayes5k.pickle", "rb")
 classifier = pickle.load(open_file)
 open_file.close()
