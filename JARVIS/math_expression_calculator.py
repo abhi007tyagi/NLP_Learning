@@ -88,7 +88,7 @@ def get_math_evaluation(text):
 
     chunkPattern = r"""Chunk1: {<RB|VBD|JJ|NNS><CD><IN|TO><CD>}
                        Chunk2: {<CD><JJ|VBN|VBD|NNS><IN|TO><CD>}
-                       Chunk3: {<CD><JJ|VBN|VBD|NNS><CD>} """
+                       Chunk3: {<CD><JJ|VBN|VBD|NN.?><CD>} """
     chunkParser = nltk.RegexpParser(chunkPattern)
     chunkedData = chunkParser.parse(tags)
     # print(chunkedData)
