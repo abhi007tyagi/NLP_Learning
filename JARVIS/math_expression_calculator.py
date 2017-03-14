@@ -9,6 +9,10 @@ def get_exp(chunked):
         # print("second check")
         exp = extract_chunks(chunked, "Chunk2")
 
+    if len(exp) == 0:
+        # print("second check")
+        exp = extract_chunks(chunked, "Chunk3")
+
     # print("get_exp ->", exp)
     return exp
 
@@ -82,8 +86,9 @@ def get_math_evaluation(text):
     tags = nltk.pos_tag(tokenized)
     # print(tags)
 
-    chunkPattern = r"""Chunk1: {<RB|VBD|JJ><CD><IN|TO><CD>}
-                       Chunk2: {<CD><JJ|VBN|VBD><IN|TO><CD>} """
+    chunkPattern = r"""Chunk1: {<RB|VBD|JJ|NNS><CD><IN|TO><CD>}
+                       Chunk2: {<CD><JJ|VBN|VBD|NNS><IN|TO><CD>}
+                       Chunk3: {<CD><JJ|VBN|VBD|NNS><CD>} """
     chunkParser = nltk.RegexpParser(chunkPattern)
     chunkedData = chunkParser.parse(tags)
     # print(chunkedData)
