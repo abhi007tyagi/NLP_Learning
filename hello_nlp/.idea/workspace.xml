@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8743eb2d-84ae-46ca-90dd-677e2baf2e23" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JARVIS/math_expression_calculator.py" afterPath="$PROJECT_DIR$/../JARVIS/math_expression_calculator.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JARVIS/tester.py" afterPath="$PROJECT_DIR$/../JARVIS/tester.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />

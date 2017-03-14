@@ -3,23 +3,23 @@ import nltk
 
 def get_exp(chunked):
 
-    exp = extract_chunks(chunked, "Chunk1")
+    exp = extract_chunks(chunked, ["Chunk1", "Chunk2",  "Chunk3"])
 
-    if len(exp) == 0:
-        # print("second check")
-        exp = extract_chunks(chunked, "Chunk2")
-
-    if len(exp) == 0:
-        # print("second check")
-        exp = extract_chunks(chunked, "Chunk3")
+    # if len(exp) == 0:
+    #     # print("second check")
+    #     exp = extract_chunks(chunked, "Chunk2")
+    #
+    # if len(exp) == 0:
+    #     # print("second check")
+    #     exp = extract_chunks(chunked, "Chunk3")
 
     # print("get_exp ->", exp)
     return exp
 
 
-def extract_chunks(chunked, tag):
+def extract_chunks(chunked, tags):
     exp = ""
-    for subtree in chunked.subtrees(filter=lambda t: t.label() == tag):
+    for subtree in chunked.subtrees(filter=lambda t: t.label() in tags):
         for l in subtree.leaves():
             exp += " "+str(l[0])
     return exp
