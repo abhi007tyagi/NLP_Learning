@@ -2,8 +2,7 @@ import nltk
 
 
 def get_exp(chunked):
-
-    exp = extract_chunks(chunked, ["Chunk1", "Chunk2",  "Chunk3"])
+    exp = extract_chunks(chunked, ["Chunk1", "Chunk2", "Chunk3"])
 
     # if len(exp) == 0:
     #     # print("second check")
@@ -21,7 +20,7 @@ def extract_chunks(chunked, tags):
     exp = ""
     for subtree in chunked.subtrees(filter=lambda t: t.label() in tags):
         for l in subtree.leaves():
-            exp += " "+str(l[0])
+            exp += " " + str(l[0])
     return exp
 
 
@@ -81,18 +80,33 @@ def check_word_action(exp):
     return exp
 
 
+def format_input(text):
+    if "-" in text:
+        return text.replace("-", " - ")
+    elif "+" in text:
+        return text.replace("+", " + ")
+    elif "*" in text:
+        return text.replace("*", " * ")
+    elif "/" in text:
+        return text.replace("/", " / ")
+    return text
+
+
 def get_math_evaluation(text):
+    # print(text)
+    text = format_input(text)
+    # print(text)
     tokenized = nltk.word_tokenize(text);
     tags = nltk.pos_tag(tokenized)
     # print(tags)
 
-    chunkPattern = r"""Chunk1: {<RB|VBD|JJ|NNS><CD><IN|TO><CD>}
-                       Chunk2: {<CD><JJ|VBN|VBD|NNS><IN|TO><CD>}
-                       Chunk3: {<CD><JJ|VBN|VBD|NN.?><CD>} """
+    chunkPattern = r"""Chunk1: {<VBP|RB|VBD|JJ|NNS><CD><IN|TO><CD>}
+                       Chunk2: {<CD><JJ|VBP|VBN|VBD|NNS><IN|TO><CD>}
+                       Chunk3: {<CD><JJ|VBP|VBN|VBD|NN.?|:><CD>} """
     chunkParser = nltk.RegexpParser(chunkPattern)
     chunkedData = chunkParser.parse(tags)
     # print(chunkedData)
 
     expression = check_word_action(get_exp(chunkedData))
-    return str(expression + " = " + str(eval(expression)))
-
+    # return str(expression + " = " + str(eval(expression)))
+    return str(eval(expression))

@@ -1,4 +1,4 @@
-Please turn on the lights
+please turn on the lights
 turn on the lamp
 switch on the lamp
 switch the lights off
@@ -7,6 +7,10 @@ start engine
 turn off the lamp
 stop the motor
 stop motor
+please stop the washing machine
+can you start the sewing machine
+engine is faulty, stop it
+start the machine
 turn on the fan
 switch on the LED
 switch off the TV

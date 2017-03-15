@@ -1,11 +1,11 @@
 1 + 3
-what is one plus three?
-123 x 5 = ?
-123 * 5 ?
-one hundered twenty three multiplied by five is equal to?
-100 divided by 10 is?
-what do we get if we subtract six from nine?
-what do we get if we subtract 6 from 9?
+what is one plus three
+123 x 5
+123 * 5
+one hundered twenty three multiplied by five is equal to
+100 divided by 10 is
+subtract six from nine
+subtract 6 from 9
 2/2 is?
 200 divided by 2
 calculate 700 + 50
@@ -92,3 +92,12 @@ ten multiplied by four
 8 multiplied by 8
 9 multiplied by 9
 0 multiplied by 0
+what 1898 subtracted from 103 is
+what is the value for 10 divided by 2
+can you multiply 7 with 5
+please multiply 10 by 3
+add 5 to 2
+subtract 2 from 9
+what is 5 minus 3
+divide 14 by 2
+what is the answer to 10 / 5
