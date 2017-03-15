@@ -12,7 +12,7 @@ def get_exp(chunked):
     #     # print("second check")
     #     exp = extract_chunks(chunked, "Chunk3")
 
-    # print("get_exp ->", exp)
+    print("get_exp ->", exp)
     return exp
 
 
@@ -98,15 +98,19 @@ def get_math_evaluation(text):
     # print(text)
     tokenized = nltk.word_tokenize(text);
     tags = nltk.pos_tag(tokenized)
-    # print(tags)
+    print(tags)
 
-    chunkPattern = r"""Chunk1: {<VBP|RB|VBD|JJ|NNS><CD><IN|TO><CD>}
-                       Chunk2: {<CD><JJ|VBP|VBN|VBD|NNS><IN|TO><CD>}
-                       Chunk3: {<CD><JJ|VBP|VBN|VBD|NN.?|:><CD>} """
+    chunkPattern = r"""Chunk1: {<VB.|VBP|RB|VBD|JJ|NNS><CD><IN|TO><CD>}
+                       Chunk2: {<CD><JJ|VB.|VBP|VBN|VBD|NNS><IN|TO><CD>}
+                       Chunk3: {<CD><JJ|VBP|VB.|VBN|VBD|NN.?|:><CD>} """
     chunkParser = nltk.RegexpParser(chunkPattern)
     chunkedData = chunkParser.parse(tags)
-    # print(chunkedData)
+    print(chunkedData)
 
-    expression = check_word_action(get_exp(chunkedData))
-    # return str(expression + " = " + str(eval(expression)))
-    return str(eval(expression))
+    exp = get_exp(chunkedData)
+    result = "Can't extract expression!"
+    if len(exp) >= 2:
+        expression = check_word_action(exp)
+        result = str(eval(expression))
+        # return str(expression + " = " + str(eval(expression)))
+    return result
