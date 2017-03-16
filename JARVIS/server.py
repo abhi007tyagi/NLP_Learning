@@ -63,7 +63,13 @@ def jarvis():
     print("request->" + str(input_request))
     text = input_request['query']
     # print(text)
-    return classifier.classify(text)
+    result = ""
+    try:
+        result = classifier.classify(text)
+    except Exception as e:
+        print(str(e.with_traceback()))
+        result = e
+    return result
 
 #
 #

@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8743eb2d-84ae-46ca-90dd-677e2baf2e23" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../JARVIS/text2num.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JARVIS/math_expression_calculator.py" afterPath="$PROJECT_DIR$/../JARVIS/math_expression_calculator.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JARVIS/raw/commands.txt" afterPath="$PROJECT_DIR$/../JARVIS/raw/commands.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JARVIS/server.py" afterPath="$PROJECT_DIR$/../JARVIS/server.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JARVIS/tester.py" afterPath="$PROJECT_DIR$/../JARVIS/tester.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../JARVIS/trainer.py" afterPath="$PROJECT_DIR$/../JARVIS/trainer.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -52,10 +57,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tagging.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="tagging.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tagging.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
+            <state relative-caret-position="255">
               <caret line="17" column="23" lean-forward="false" selection-start-line="16" selection-start-column="12" selection-end-line="17" selection-end-column="23" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
@@ -64,7 +69,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="math_expression_finder.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="math_expression_finder.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/math_expression_finder.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="383">
@@ -974,16 +979,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tagging.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="17" column="23" lean-forward="false" selection-start-line="16" selection-start-column="12" selection-end-line="17" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/math_expression_finder.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="383">
@@ -1043,6 +1038,16 @@
         <state relative-caret-position="18315">
           <caret line="1233" column="0" lean-forward="false" selection-start-line="1233" selection-start-column="0" selection-end-line="1233" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tagging.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="23" lean-forward="false" selection-start-line="16" selection-start-column="12" selection-end-line="17" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

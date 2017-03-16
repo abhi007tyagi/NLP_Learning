@@ -1,11 +1,16 @@
 import jarvis as j
+import nltk
 import math_expression_calculator as math_cal
+import inflect
+import text2num
 
-print(j.get_context("hello, what's your name"))
-print(j.get_context("hi there"))
+# print(j.get_context("hello"))
+# print(j.get_context("hi"))
 # print(j.get_context("hey! can you move up the ladder?"))
-print(j.get_context("hey, how are you today?"))
+# print(j.get_context("hey, how are you today?"))
 # print(j.get_context("how's today's weather"))
+# print(j.get_context("hey, add three to 4"))
+# print(j.get_context("what is three multiplied to 4"))
 # print(math_cal.get_math_evaluation("can you answer what 1898 subtracted from 103 is?"))
 # print(math_cal.get_math_evaluation("what is the value for 10 divided by 2?"))
 # print(math_cal.get_math_evaluation("multiply 7 with 5"))
@@ -15,4 +20,17 @@ print(j.get_context("hey, how are you today?"))
 # print(math_cal.get_math_evaluation("what is 5 minus 3"))
 # print(math_cal.get_math_evaluation("divide 14 by 2"))
 # print(math_cal.get_math_evaluation("answer to 10 / 5"))
-print(math_cal.get_math_evaluation("what do we get when we multiply 3 with 12345"))
+print(math_cal.get_math_evaluation("add two thousand three hundred seventy six to 100"))
+print(math_cal.get_math_evaluation("what is three hundred seventy five multiplied by 100"))
+print(math_cal.get_math_evaluation("calculate forty two thousand one hundred seventy five divided by 100"))
+print(math_cal.get_math_evaluation("eleven million seventy five multiplied by 100"))
+# text = "what is three multiplied to 4"
+
+# p = inflect.engine()
+# print(p.number_to_words(99))
+#
+# print(text2num.text2num("two thousand three hundred seventy six "))
+#
+# tokenized = nltk.word_tokenize(text)
+# tags = nltk.pos_tag(tokenized)
+# print(tags)

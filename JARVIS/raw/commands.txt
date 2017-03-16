@@ -21,3 +21,8 @@ move up
 move down
 turn right
 turn left
+move forward for 10 seconds
+go up the stairs
+move the box up to the second floor
+turn down the volume
+turn up the volume

@@ -20,7 +20,7 @@ all_words = []
 documents = []
 
 #  j is adject, r is adverb, and v is verb
-allowed_word_types = ["J", "R", "V"]
+allowed_word_types = ["J", "R", "V", "N", "CD"]
 
 for wel in welcome.split("\n"):
     documents.append((wel, "wel"))

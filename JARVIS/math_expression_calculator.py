@@ -1,4 +1,5 @@
 import nltk
+import text2num as t2n
 
 
 def get_exp(chunked):
@@ -20,13 +21,23 @@ def extract_chunks(chunked, tags):
     exp = ""
     for subtree in chunked.subtrees(filter=lambda t: t.label() in tags):
         for l in subtree.leaves():
-            exp += " " + str(l[0])
+            digit = str(l[0])
+            try:
+                if l[1] == 'CD':
+                    digit = str(t2n.text2num(digit))
+            except Exception as e:
+                print("text2num error ->", e.args)
+
+            exp += " " + digit
     return exp
 
 
 def check_word_action(exp):
     if "multiplied by" in exp:
         exp = exp.replace("multiplied by", "*")
+        return exp
+    if "multiplied to" in exp:
+        exp = exp.replace("multiplied to", "*")
         return exp
     if "multiply" in exp:
         exp = exp.replace("multiply ", "")
@@ -92,7 +103,31 @@ def format_input(text):
     return text
 
 
+def text_to_num(text):
+    tokenized = nltk.word_tokenize(text);
+    tags = nltk.pos_tag(tokenized)
+    print(tags)
+    chunkPattern = r""" Chunk0: {((<NN|CD.?|RB>)<CD.?|VBD.?|VBP.?|VBN.?|NN.?|RB.?|JJ>*)<NN|CD.?>} """
+    chunkParser = nltk.RegexpParser(chunkPattern)
+    chunkedData = chunkParser.parse(tags)
+    print(chunkedData)
+
+    for subtree in chunkedData.subtrees(filter=lambda t: t.label() in "Chunk0"):
+        exp = ""
+        for l in subtree.leaves():
+            exp += str(l[0]) + " "
+        exp = exp[:-1]
+        print(exp)
+        try:
+            text = text.replace(exp, str(t2n.text2num(exp)))
+        except Exception as e:
+            print("error", e.args)
+        print(text)
+    return text
+
+
 def get_math_evaluation(text):
+    text = text_to_num(text)
     # print(text)
     text = format_input(text)
     # print(text)
@@ -100,9 +135,9 @@ def get_math_evaluation(text):
     tags = nltk.pos_tag(tokenized)
     print(tags)
 
-    chunkPattern = r"""Chunk1: {<VB.|VBP|RB|VBD|JJ|NNS><CD><IN|TO><CD>}
-                       Chunk2: {<CD><JJ|VB.|VBP|VBN|VBD|NNS><IN|TO><CD>}
-                       Chunk3: {<CD><JJ|VBP|VB.|VBN|VBD|NN.?|:><CD>} """
+    chunkPattern = r""" Chunk1: {<VB|VBP|RB|VBD|JJ|NNS><CD*><IN|TO><CD*>}
+                        Chunk2: {<CD*><JJ|VB|VBP|VBN|VBD|NNS><IN|TO><CD*>}
+                        Chunk3: {<CD*><JJ|VBP|VB|VBN|VBD|NN|:><CD*>} """
     chunkParser = nltk.RegexpParser(chunkPattern)
     chunkedData = chunkParser.parse(tags)
     print(chunkedData)
