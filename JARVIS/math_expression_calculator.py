@@ -37,11 +37,11 @@ def extract_direct_math_expressions(tags):
             stack.append(" * ")
         elif "divide" == word[0]:
             stack.append(" / ")
-        elif "plus" == word[0] or "+" == word[0]:
+        elif "plus" == word[0] or "+" == word[0] or "added" == word[0]:
             exp += " + "
         elif "minus" == word[0] or "-" == word[0]:
             exp += " - "
-        elif "multiplied" == word[0] or "*" == word[0]:
+        elif "multiplied" == word[0] or "*" == word[0] or "x" == word[0]  or "X" == word[0]:
             exp += " * "
         elif "divided" == word[0] or "/" == word[0]:
             exp += " / "
@@ -130,9 +130,9 @@ def format_input(text):
     return text
 
 
-def text_to_num(tags):
-    # tokenized = nltk.word_tokenize(text);
-    # tags = nltk.pos_tag(tokenized)
+def text_to_num(text):
+    tokenized = nltk.word_tokenize(text);
+    tags = nltk.pos_tag(tokenized)
     print(tags)
     chunkPattern = r""" Chunk0: {((<NN|CD.?|RB>)<CD.?|VBD.?|VBP.?|VBN.?|NN.?|RB.?|JJ>*)<NN|CD.?>} """
     chunkParser = nltk.RegexpParser(chunkPattern)
