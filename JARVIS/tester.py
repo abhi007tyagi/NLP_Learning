@@ -24,10 +24,11 @@ print(math_cal.get_math_evaluation("what is the result for 7 multiplied by 6"))
 # print(math_cal.get_math_evaluation("add two thousand three hundred seventy six to 100"))
 # print(math_cal.get_math_evaluation("what is three hundred seventy five multiplied by 100"))
 # print(math_cal.get_math_evaluation("eleven million seventy five multiplied by 100"))
+print(math_cal.get_math_evaluation("what do we get when 100 is added to 23?"))
 print(math_cal.get_math_evaluation("multiply 1 to 2 minus 6 plus 10 multiplied by 2 divided by 4"))
 print(math_cal.get_math_evaluation("what is 10 multiplied by 6 plus 2 minus 6 plus 10 multiplied by 2 divided by 4"))
 print(math_cal.get_math_evaluation("calculate forty two thousand one hundred seventy five divided by 100"))
-print(math_cal.get_math_evaluation("calculate 10 / 2 - 6 + 7"))
+print(math_cal.get_math_evaluation("evaluate 10 / 2 - 6 + 7"))
 # text = "multiply 1 to 2 minus 6 plus 10 multiplied by 2 divided by 4"
 # text = "1/2+3-4="
 # exp = "1*2-6+10*2/4"
